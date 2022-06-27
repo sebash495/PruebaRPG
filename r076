@@ -1,0 +1,199 @@
+  5761WDS V7R1M0  100416                  LISTADO FUENTE SEU                            13/02/22 07:45:27    SICOL7       P핯.    1
+  ARCHIVO FUENTE  . . . . .  ZHENRY/QRPGLESRC
+  MIEMBRO . . . . . . . . .  PROL3157
+  SEQNBR*...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 ...+... 8 ...+... 9 ...+... 0
+    100       *--------------------------------------------------------------------                                     01/10/04
+    200       * PROGRAMA    : PROL3157                                            I                                     20/01/05
+    300       * FECHA       : Enero 20 DE 2005                                    I                                     20/01/05
+    400       * AUTOR       : Henry Garcia - Olimpica S.A.                        I                                     01/10/04
+    500       * DESCRIPCION : llena el archivo codigdet                           I                                     20/01/05
+    600       * VERSION     : Original                                            I                                     01/10/04
+    700       *--------------------------------------------------------------------                                     01/10/04
+    800      FCODIGDET  UF A E           k DISK    prefix(c)                                                            06/10/04
+    900      FREPLUAGRL1IF   E           K DISK    prefix(a)                                                            18/01/05
+   1000      FINMAEA    IF   E           K DISK    prefix(x)                                                            17/01/05
+   1100      F                                     rename(INMAES:RINMAEA)                                               17/01/05
+   1200      FINMAES    IF   E           K DISK    prefix(i)                                                            01/10/04
+   1300      F                                     rename(INMAES:RINMAES)                                               01/10/04
+   1400      FINMAPR    IF   E           K DISK    prefix(r)                                                            18/01/05
+   1500      F                                     rename(INMAES:RINMAPR)                                               18/01/05
+   1600                                                                                                                 02/08/04
+   1700      d                 ds                                                                                       05/08/04
+   1800      d categpr                 1     10                                                                         06/10/04
+   1900      d grupopr                 1      2                                                                         01/10/04
+   2000      d subg01pr                3      4                                                                         01/10/04
+   2100      d subg02pr                5      6                                                                         01/10/04
+   2200      d subg03pr                7      8                                                                         01/10/04
+   2300      d subg04pr                9     10                                                                         01/10/04
+   2400      d                 ds                                                                                       17/01/05
+   2500      d categir                 1     10                                                                         17/01/05
+   2600      d subgruir                3      8                                                                         17/01/05
+   2700      d grupoir                 1      2                                                                         17/01/05
+   2800      d subg01ir                3      4                                                                         17/01/05
+   2900      d subg02ir                5      6                                                                         17/01/05
+   3000      d subg03ir                7      8                                                                         17/01/05
+   3100      d subg04ir                9     10                                                                         17/01/05
+   3200                                                                                                                 17/01/05
+   3300      d                 ds                                                                                       18/01/05
+   3400      d catnuir                 1     21s 0                                                                      18/01/05
+   3500      d nivel1r                 1      3s 0                                                                      18/01/05
+   3600      d nivel2r                 4      6s 0                                                                      18/01/05
+   3700      d nivel3r                 7      9s 0                                                                      18/01/05
+   3800      d nivel4r                10     12s 0                                                                      18/01/05
+   3900      d nivel5r                13     15s 0                                                                      18/01/05
+   4000      d nivel6r                16     18s 0                                                                      18/01/05
+   4100      d nivel7r                19     21s 0                                                                      18/01/05
+   4200                                                                                                                 18/01/05
+   4300      d crear           s              1a                                                                        01/10/04
+   4400      d categini        s             10a                                                                        06/10/04
+   4500      d categfin        s             10a                                                                        18/01/05
+   4600      d catnuini        s             21s 0                                                                      17/01/05
+   4700      d catnufin        s             21s 0                                                                      17/01/05
+   4800      d wprovee         s             15s 0                                                                      06/10/04
+   4900      d Wfecha1         s              8s 0                                                                      17/01/05
+   5000      d Wfecha2         s              8s 0                                                                      17/01/05
+   5100      d tipop           s              3a                                                                        18/01/05
+   5200      d wnegocio        s              3s 0                                                                      20/01/05
+   5300      d linea           s              2s 0                                                                      18/01/05
+  5761WDS V7R1M0  100416                  LISTADO FUENTE SEU                            13/02/22 07:45:27    SICOL7       P핯.    2
+  ARCHIVO FUENTE  . . . . .  ZHENRY/QRPGLESRC
+  MIEMBRO . . . . . . . . .  PROL3157
+  SEQNBR*...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 ...+... 8 ...+... 9 ...+... 0
+   5400      d TIPOAJUPR       s              2s 0                                                                      19/01/05
+   5500                                                                                                                 05/08/04
+   5600      c     *ENTRY        plist                                                                                  05/08/04
+   5700      c                   parm                    WNEGOCIO          3 0                                          17/01/05
+   5800      c                   parm                    Wfecha1                                                        17/01/05
+   5900      c                   parm                    Wfecha2                                                        17/01/05
+   6000      c                   parm                    wprovee                                                        17/01/05
+   6100      c                   parm                    categini                                                       06/10/04
+   6200      c                   parm                    categfin                                                       06/10/04
+   6300      c                   parm                    catnuini                                                       17/01/05
+   6400      c                   parm                    catnufin                                                       17/01/05
+   6500      c                   parm                    tipop                                                          18/01/05
+   6600      c                   MOVE      catnuini      catnuir                                                        18/01/05
+   6700       /free                                                                                                     03/09/03
+   6800           linea = 77;                                                                                           18/01/05
+   6900           categir = categini;                                                                                   01/10/04
+   7000           exsr codigos;                                                                                         01/10/04
+   7100    29     eval *inlr='1';                                                                                       01/10/04
+   7200                                                                                                                 01/10/04
+   7300         //----------------------------------------------------------------                                      01/10/04
+   7400         // selecciona los codigos a tener presente en la busqueda        I                                      01/10/04
+   7500         //----------------------------------------------------------------                                      01/10/04
+   7600                                                                                                                 01/10/04
+   7700         begsr codigos;                                                                                          01/10/04
+   7800                                                                                                                 17/01/05
+   7900           if categini <> ' ';                                                                                   17/01/05
+   8000              setll key01 RINMAEA;                                                                               17/01/05
+   8100              read RINMAEA;                                                                                      17/01/05
+   8200              grupopr  = xgrupo;                                                                                 17/01/05
+   8300              subg01pr = xsubg01;                                                                                17/01/05
+   8400              subg02pr = xsubg02;                                                                                17/01/05
+   8500              subg03pr = xsubg03;                                                                                17/01/05
+   8600              subg04pr = xsubg04;                                                                                17/01/05
+   8700              dow (not %eof(INMAEA)) and (categpr <= categfin);                                                  17/01/05
+   8800                  if (wprovee = 0) or ( wprovee > 0 and wprovee = xprovee);                                      17/01/05
+   8900                     clear RCODIGDET;                                                                            17/01/05
+   9000                     eval ccodigo = xcodigo;                                                                     17/01/05
+   9100                     write RCODIGDET;                                                                            17/01/05
+   9200                  endif;                                                                                         17/01/05
+   9300                  read RINMAEA;                                                                                  17/01/05
+   9400                  grupopr  = xgrupo;                                                                             17/01/05
+   9500                  subg01pr = xsubg01;                                                                            17/01/05
+   9600                  subg02pr = xsubg02;                                                                            17/01/05
+   9700                  subg03pr = xsubg03;                                                                            17/01/05
+   9800                  subg04pr = xsubg04;                                                                            17/01/05
+   9900              enddo;                                                                                             17/01/05
+  10000           else;                                                                                                 17/01/05
+  10100              if catnuini > 0;                                                                                   18/01/05
+  10200                 setll key02 RPLUAGR;                                                                            18/01/05
+  10300                 read RPLUAGR;                                                                                   18/01/05
+  10400                 nivel1r  = anivel1;                                                                             18/01/05
+  10500                 nivel2r  = anivel2;                                                                             18/01/05
+  10600                 nivel3r  = anivel3;                                                                             18/01/05
+  5761WDS V7R1M0  100416                  LISTADO FUENTE SEU                            13/02/22 07:45:27    SICOL7       P핯.    3
+  ARCHIVO FUENTE  . . . . .  ZHENRY/QRPGLESRC
+  MIEMBRO . . . . . . . . .  PROL3157
+  SEQNBR*...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 ...+... 8 ...+... 9 ...+... 0
+  10700                 nivel4r  = anivel4;                                                                             18/01/05
+  10800                 nivel5r  = anivel5;                                                                             18/01/05
+  10900                 nivel6r  = anivel6;                                                                             18/01/05
+  11000                 nivel7r  = anivel7;                                                                             18/01/05
+  11100                 dow (not %eof(REPLUAGRL1)) and (catnuir <= catnufin);                                           18/01/05
+  11200                     chain acodigo rinmaes;                                                                      18/01/05
+  11300                     if  %found(REPLUAGRL1);                                                                     18/01/05
+  11400                         if (wprovee = 0) or                                                                     18/01/05
+  11500                            ( wprovee > 0 and wprovee = iprovee);                                                18/01/05
+  11600                            clear RCODIGDET;                                                                     18/01/05
+  11700                            eval ccodigo = icodigo;                                                              18/01/05
+  11800                            write RCODIGDET;                                                                     18/01/05
+  11900                         endif;                                                                                  18/01/05
+  12000                     endif;                                                                                      18/01/05
+  12100                     read RPLUAGR;                                                                               18/01/05
+  12200                     nivel1r  = anivel1;                                                                         18/01/05
+  12300                     nivel2r  = anivel2;                                                                         18/01/05
+  12400                     nivel3r  = anivel3;                                                                         18/01/05
+  12500                     nivel4r  = anivel4;                                                                         18/01/05
+  12600                     nivel5r  = anivel5;                                                                         18/01/05
+  12700                     nivel6r  = anivel6;                                                                         18/01/05
+  12800                     nivel7r  = anivel7;                                                                         18/01/05
+  12900                 enddo;                                                                                          18/01/05
+  13000              else;                                                                                              18/01/05
+  13100                 if wprovee <> 0;                                                                                18/01/05
+  13200                    setll wprovee RINMAPR;                                                                       18/01/05
+  13300                    read RINMAPR;                                                                                18/01/05
+  13400                    dow (not %eof(INMAPR)) and (rprovee = wprovee);                                              18/01/05
+  13500                        clear RCODIGDET;                                                                         18/01/05
+  13600                        eval ccodigo = rcodigo;                                                                  18/01/05
+  13700                        write RCODIGDET;                                                                         18/01/05
+  13800                        read RINMAPR;                                                                            18/01/05
+  13900                    enddo;                                                                                       18/01/05
+  14000                 else;                                                                                           18/01/05
+  14100                    setll *loval RINMAPR;                                                                        18/01/05
+  14200                    read RINMAPR;                                                                                18/01/05
+  14300                    dow (not %eof(INMAPR));                                                                      18/01/05
+  14400                        clear RCODIGDET;                                                                         18/01/05
+  14500                        eval ccodigo = rcodigo;                                                                  18/01/05
+  14600                        write RCODIGDET;                                                                         18/01/05
+  14700                        read RINMAPR;                                                                            18/01/05
+  14800                    enddo;                                                                                       18/01/05
+  14900                 endif;                                                                                          18/01/05
+  15000              endif;                                                                                             18/01/05
+  15100           endif;                                                                                                01/10/04
+  15200        endsr;                                                                                                   30/09/04
+  15300                                                                                                                 05/08/04
+  15400    44 /end-free                                                                                                 01/10/04
+  15500                                                                                                                 01/10/04
+  15600       *--------------------------------------------------------------------                                     01/10/04
+  15700      c     PARAM         begsr                                                                                  09/05/02
+  15800      c     key01         klist                                                                                  01/10/04
+  15900      c                   kfld                    grupoir                                                        01/10/04
+  5761WDS V7R1M0  100416                  LISTADO FUENTE SEU                            13/02/22 07:45:27    SICOL7       P핯.    4
+  ARCHIVO FUENTE  . . . . .  ZHENRY/QRPGLESRC
+  MIEMBRO . . . . . . . . .  PROL3157
+  SEQNBR*...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 ...+... 8 ...+... 9 ...+... 0
+  16000      c                   kfld                    subg01ir                                                       01/10/04
+  16100      c                   kfld                    subg02ir                                                       01/10/04
+  16200      c                   kfld                    subg03ir                                                       01/10/04
+  16300      c                   kfld                    subg04ir                                                       01/10/04
+  16400                                                                                                                 01/10/04
+  16500      c*----------------------------------------------------------------*                                        06/10/04
+  16600      c     key02         klist                                                                                  01/10/04
+  16700      c                   kfld                    tipop                                                          18/01/05
+  16800      c                   kfld                    nivel1r                                                        18/01/05
+  16900      c                   kfld                    nivel2r                                                        18/01/05
+  17000      c                   kfld                    nivel3r                                                        18/01/05
+  17100      c                   kfld                    nivel4r                                                        18/01/05
+  17200      c                   kfld                    nivel5r                                                        18/01/05
+  17300      c                   kfld                    nivel6r                                                        18/01/05
+  17400      c                   kfld                    nivel7r                                                        18/01/05
+  17500                                                                                                                 01/10/04
+  17600      c*----------------------------------------------------------------*                                        06/10/04
+  17700      c     key03         klist                                                                                  01/10/04
+  17800      c                   kfld                    wnegocio                                                       18/01/05
+  17900      c                   kfld                    ccodigo                                                        18/01/05
+  18000                                                                                                                 01/10/04
+  18100      C                   ENDSR                                                                                  20/01/05
+  18200                                                                                                                 18/01/05
+                                  * * * *  F I N  D E  F U E N T E  * * * *
